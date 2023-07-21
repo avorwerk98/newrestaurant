@@ -18,7 +18,7 @@ function Navigation() {
   }
 
   return (
-    <header className="bg-blue-800">
+    <header className="bg-gradient-to-r from-indigo-500 from 20% via-sky-500 via 60% to-emerald-500 to-90%">
       <nav className="flex justify-between p-6 px-4">
         <div className="flex justify-between items-center w-full mx-16">
           <div className="xl:w-1/3">
