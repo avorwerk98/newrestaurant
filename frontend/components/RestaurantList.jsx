@@ -39,7 +39,7 @@ function RestaurantCard({ data }) {
             className="w-full rounded-2xl"
             height={300}
             width={300}
-            src={`${process.env.STRAPI_URL || "http://localhost:1337"}${imageUrl}`}
+            src={`${process.env.STRAPI_URL || "https://strapi-lh2y.onrender.coms"}${imageUrl}`}
             alt=""
           />
         <div className="p-8">
