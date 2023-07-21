@@ -5,7 +5,7 @@ import { gql } from "@apollo/client";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { useAppContext } from "@/context/AppContext";
 import { useRouter } from "next/router";
-import { useInitialRender } from "@/pages/utils/useInitialRender";
+import { useInitialRender } from "@/utils/useInitialRender";
 
 const options = {
   style: {
