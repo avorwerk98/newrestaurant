@@ -1,5 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
-import { centsToDollars } from "@/pages/utils/centsToDollars";
+import { centsToDollars } from "@/utils/centsToDollars";
 import { useRouter } from "next/router";
 import { useAppContext } from "@/context/AppContext";
 
