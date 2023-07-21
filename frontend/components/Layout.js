@@ -46,7 +46,7 @@ function Navigation() {
                       {user.username}
                     </span>
                     <button
-                      className="inline-block py-2 px-4 text-sm leading-5 text-green-50 bg-green-500 hover:bg-green-600 font-medium focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-md"
+                      className="inline-block py-2 px-4 text-sm leading-5 text-green-50 bg-sky-500 hover:bg-sky-600 font-medium focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-md"
                       onClick={handleLogout}
                     >
                       Log Out
@@ -55,13 +55,13 @@ function Navigation() {
                 ) : (
                   <div className="flex items-center justify-end">
                     <Link
-                      className="inline-block py-2 px-4 mr-2 leading-5 text-gray-50  hover:text-yellow-200 font-bold bg-transparent rounded-md"
+                      className="inline-block py-2 px-4 mr-2 leading-5 text-gray-50  hover:text-indigo-500 font-bold bg-transparent rounded-md"
                       href="/login"
                     >
                       Log In
                     </Link>
                     <Link
-                      className="inline-block py-2 px-4 text-sm leading-5 text-green-50 bg-green-600 hover:bg-green-700 font-medium focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-md"
+                      className="inline-block py-2 px-4 text-sm leading-5 text-green-50 bg-sky-500 hover:bg-sky-700 font-medium focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-md"
                       href="/register"
                     >
                       Sign Up
