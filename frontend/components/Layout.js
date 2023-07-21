@@ -18,7 +18,7 @@ function Navigation() {
   }
 
   return (
-    <header className="bg-green-800">
+    <header className="bg-blue-800">
       <nav className="flex justify-between p-6 px-4">
         <div className="flex justify-between items-center w-full mx-16">
           <div className="xl:w-1/3">
@@ -26,7 +26,7 @@ function Navigation() {
               className="block text-2xl max-w-max text-white font-medium"
               href="/"
             >
-              Food Order App
+              Southie Food Delivery
             </Link>
           </div>
 
