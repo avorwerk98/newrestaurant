@@ -3,12 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import Loader from "./Loader";
 
-import resImage1 from "../uploads/capo.png"
-import resImage2 from "../uploads/lincoln.png"
-import resImage3 from "../uploads/loco.png"
-import resImage4 from "../uploads/publico.png"
-import resImage5 from "../uploads/rosalyons.png"
-import resImage6 from "../uploads/hunters.png"
+const restaurantImageMap = {
+  1: "../uploads/capo.png",
+  2: "../uploads/lincoln.png",
+  3: "../uploads/loco.png",
+  4: "../uploads/publico.png",
+  5: "../uploads/rosalyons.png",
+  6: "../uploads/hunters.png",
+};
 
 const QUERY = gql`
   {
@@ -37,18 +39,11 @@ function RestaurantCard({ data }) {
       return <div>Error: Missing image URL.</div>;
     }
   
-    const imageUrl = data.attributes.image.data[0].attributes.url;
 
-    const restaurantImages = {
-      res1: resImage1,
-      res2: resImage2,
-      res3: resImage3,
-      res4: resImage4,
-      res5: resImage5,
-      res6: resImage6,
-    };
+    const imageFilename = restaurantImageMap[data.id];
+  
 
-    const imageSrc = restaurantImages[data.id] || imageUrl;
+    const imageUrl = imageFilename `./uploads/${imageFilename}`;
   
     return (
       <div className="w-full md:w-1/2 lg:w-1/3 p-4">
@@ -57,7 +52,7 @@ function RestaurantCard({ data }) {
             className="w-full rounded-2xl"
             height={300}
             width={300}
-            src={imageSrc}
+            src={imageUrl}
             alt={data.attributes.name}
           />
         <div className="p-8">
@@ -70,7 +65,7 @@ function RestaurantCard({ data }) {
           <div className="flex flex-wrap md:justify-center -m-2">
             <div className="w-full md:w-auto p-2 my-6">
               <Link
-                className="block w-full px-12 py-3.5 text-lg text-center text-white font-bold bg-sky-560 hover:bg-emerald-500 focus:ring-4 focus:ring-gray-600 rounded-full"
+                className="block w-full px-12 py-3.5 text-lg text-center text-white font-bold bg-sky-500 hover:bg-emerald-500 focus:ring-4 focus:ring-gray-600 rounded-full"
                 href={`/restaurant/${data.id}`}
               >
                 Order
