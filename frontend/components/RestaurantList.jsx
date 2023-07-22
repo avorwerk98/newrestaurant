@@ -3,6 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 import Loader from "./Loader";
 
+import resImage1 from "../../backend/public/uploads/capo.png"
+import resImage2 from "../../backend/public/uploads/lincoln.png"
+import resImage3 from "../../backend/public/uploads/loco.png"
+import resImage4 from "../../backend/public/uploads/publico.png"
+import resImage5 from "../../backend/public/uploads/rosalyons.png"
+import resImage6 from "../../backend/public/uploads/hunters.png"
+
 const QUERY = gql`
   {
     restaurants {
@@ -31,6 +38,17 @@ function RestaurantCard({ data }) {
     }
   
     const imageUrl = data.attributes.image.data[0].attributes.url;
+
+    const restaurantImages = {
+      res1: resImage1,
+      res2: resImage2,
+      res3: resImage3,
+      res4: resImage4,
+      res5: resImage5,
+      res6: resImage6,
+    };
+
+    const imageSrc = restaurantImages[data.id] || imageUrl;
   
     return (
       <div className="w-full md:w-1/2 lg:w-1/3 p-4">
@@ -39,7 +57,7 @@ function RestaurantCard({ data }) {
             className="w-full rounded-2xl"
             height={300}
             width={300}
-            src={imageUrl}
+            src={imageSrc}
             alt={data.attributes.name}
           />
         <div className="p-8">
