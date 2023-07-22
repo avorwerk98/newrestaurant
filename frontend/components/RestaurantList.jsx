@@ -1,15 +1,15 @@
 import { gql, useQuery } from "@apollo/client";
 import Link from "next/link";
-import Image from "next/image";
+
 import Loader from "./Loader";
 
 const restaurantImageMap = {
-  1: "../uploads/capo.png",
-  2: "../uploads/lincoln.png",
-  3: "../uploads/loco.png",
-  4: "../uploads/publico.png",
-  5: "../uploads/rosalyons.png",
-  6: "../uploads/hunters.png",
+  1: "capo.png",
+  2: "lincoln.png",
+  3: "loco.png",
+  4: "publico.png",
+  5: "rosalyons.png",
+  6: "hunters.png",
 };
 
 const QUERY = gql`
@@ -43,7 +43,7 @@ function RestaurantCard({ data }) {
     const imageFilename = restaurantImageMap[data.id];
   
 
-    const imageUrl = "./uploads" + imageFilename;
+    const imageUrl = "/uploads/" + imageFilename;
   
     return (
       <div className="w-full md:w-1/2 lg:w-1/3 p-4">
