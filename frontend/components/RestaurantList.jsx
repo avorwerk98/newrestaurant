@@ -5,11 +5,11 @@ import Loader from "./Loader";
 
 const restaurantImageMap = {
   1: "capo.png",
-  2: "lincoln.png",
-  3: "loco.png",
-  4: "publico.png",
+  2: "locopng",
+  3: "lincoln.png",
+  4: "hunters.png",
   5: "rosalyons.png",
-  6: "hunters.png",
+  6: "publico.png",
 };
 
 const QUERY = gql`
