@@ -43,7 +43,7 @@ function RestaurantCard({ data }) {
     const imageFilename = restaurantImageMap[data.id];
   
 
-    const imageUrl = imageFilename `./uploads/${imageFilename}`;
+    const imageUrl = "./uploads" + imageFilename;
   
     return (
       <div className="w-full md:w-1/2 lg:w-1/3 p-4">
