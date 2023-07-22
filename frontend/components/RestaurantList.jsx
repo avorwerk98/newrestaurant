@@ -3,12 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import Loader from "./Loader";
 
-import resImage1 from "../../backend/public/uploads/capo.png"
-import resImage2 from "../../backend/public/uploads/lincoln.png"
-import resImage3 from "../../backend/public/uploads/loco.png"
-import resImage4 from "../../backend/public/uploads/publico.png"
-import resImage5 from "../../backend/public/uploads/rosalyons.png"
-import resImage6 from "../../backend/public/uploads/hunters.png"
+import resImage1 from "../uploads/capo.png"
+import resImage2 from "../uploads/lincoln.png"
+import resImage3 from "../uploads/loco.png"
+import resImage4 from "../uploads/publico.png"
+import resImage5 from "../uploads/rosalyons.png"
+import resImage6 from "../uploads/hunters.png"
 
 const QUERY = gql`
   {
