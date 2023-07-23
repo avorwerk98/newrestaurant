@@ -7,7 +7,7 @@ function CartItem({ data }) {
   const { quantity, attributes } = data;
 
   return (
-    <div className="p-6 flex flex-wrap justify-between border-b border-blueGray-800">
+    <div className="p-6 flex flex-wrap justify-between border-b border-coolGray-800 bg-opacity-50">
       <div className="w-2/4">
         <div className="flex flex-col h-full">
           <h6 className="font-bold text-white mb-1">{attributes.name}</h6>

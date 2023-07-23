@@ -6,6 +6,49 @@ import { useAppContext } from "@/context/AppContext";
 import Image from "next/image";
 import Loader from '@/components/Loader';
 
+const dishImageMap = {
+  1: "arancini.png",
+  2: "meatballs.png",
+  3: "proscuitto.png",
+  4: "italianchop.png",
+  5: "sausagepasta.png",
+  6: "carbonara.png",
+  7: "corn.png",
+  8: "guac",
+  9: "nachos.png",
+  10: "chickenparm.png",
+  11: "carnitas.png",
+  12: "shrimptaco.png",
+  13: "tacosalad.png",
+  14: "churros.png",
+  15: "wings.png",
+  16: "sliders.png",
+  17: "kalesalad.png",
+  18: "margherita.png",
+  19: "sausagepizza.png",
+  20: "smash",
+  21: "chickensandwich.png",
+  22: "cauliflower.png",
+  23: "charcuterie.png",
+  24: "octopus.png",
+  25: "steakfrites.png",
+  26: "lobsterroll.png",
+  27: "salmon.png",
+  28: "pretzels.png",
+  29: "steaksalaldsalad.png",
+  30: "maplechicken",
+  31: "lyon.png",
+  32: "ablt.png",
+  33: "steaktips.png",
+  34: "popcornchicken.png",
+  35: "biscuits.png",
+  36: "stirfry",
+  37: ".png",
+  38: "burger.png",
+  39: "pulledpork.png",
+
+};
+
 const GET_RESTAURANT_DISHES = gql`
   query ($id: ID!) {
     restaurant(id: $id) {
@@ -43,6 +86,10 @@ function DishCard({ data }) {
     addItem(data);
     setShowCart(true);
   }
+  const imageFilename = restaurantImageMap[data.id];
+  
+
+  const imageUrl = "/uploads/" + imageFilename;
 
   return (
     <div className="w-full md:w-1/2 lg:w-1/3 p-4">
@@ -52,9 +99,7 @@ function DishCard({ data }) {
           className="w-full rounded-2xl"
           height={300}
           width={300}
-          src={`${process.env.STRAPI_URL || "https://strapi-lh2y.onrender.com"}${
-            data.attributes.image.data.attributes.url
-          }`}
+          src={imageUrl}
           alt=""
         />
         <div className="p-8">
