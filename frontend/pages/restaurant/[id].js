@@ -86,10 +86,10 @@ function DishCard({ data }) {
     addItem(data);
     setShowCart(true);
   }
-  const imageFilename = restaurantImageMap[data.id];
+  const imageName = dishImageMap[data.id];
   
 
-  const imageUrl = "/uploads/" + imageFilename;
+  const image = "/uploads/" + imageName;
 
   return (
     <div className="w-full md:w-1/2 lg:w-1/3 p-4">
@@ -99,7 +99,7 @@ function DishCard({ data }) {
           className="w-full rounded-2xl"
           height={300}
           width={300}
-          src={imageUrl}
+          src={image}
           alt=""
         />
         <div className="p-8">
