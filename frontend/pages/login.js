@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useAppContext } from "@/context/AppContext";
 import { gql, useMutation } from "@apollo/client";
 import Cookie from "js-cookie";
+import firebase from "@firebase";
 
 import Form from "@/components/Form";
 import Loader from "@/components/Loader";
@@ -36,18 +37,46 @@ export default function LoginRoute() {
       Cookie.set("token", data.login.jwt);
       router.push("/");
     }
+  const handleGoogleSignIn = async () => {
+    try {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      await firebase.auth().signInWithPopup(provider);
+
+      const user = firebase.auth().currentUser;
+      if (user) {
+        setUser({
+          username: user.displayName,
+          email: user.email,
+        })
+        router.push("/")
+      }
+    } catch (error) {
+      console.error("Error signing in with Google:", error);
+    }
+  }
   };
 
   if (loading) return <Loader />;
 
   return (
-    <Form
-      title="Login"
-      buttonText="Login"
-      formData={formData}
-      setFormData={setFormData}
-      callback={handleLogin}
-      error={error}
-    />
+    <>
+      <Form
+       title="Login"
+       buttonText="Login"
+       formData={formData}
+       setFormData={setFormData}
+        callback={handleLogin}
+       error={error}
+      />
+      {/* Google Sign-In Button*/}
+     <div>
+       <button
+         onClick={handleGoogleSignIn}
+          className="mt-4 w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-w px-4 rounded"
+       >
+         Sign in with Google
+        </button>    
+      </div>
+    </>
   );
 }

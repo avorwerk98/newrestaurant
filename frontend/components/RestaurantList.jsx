@@ -5,7 +5,7 @@ import Loader from "./Loader";
 
 const restaurantImageMap = {
   1: "capo.png",
-  2: "locopng",
+  2: "loco.png",
   3: "lincoln.png",
   4: "hunters.png",
   5: "rosalyons.png",
