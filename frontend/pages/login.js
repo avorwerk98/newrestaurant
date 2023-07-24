@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useAppContext } from "@/context/AppContext";
 import { gql, useMutation } from "@apollo/client";
 import Cookie from "js-cookie";
-import firebase from "@firebase";
+import firebase from "./firebase";
 
 import Form from "@/components/Form";
 import Loader from "@/components/Loader";
