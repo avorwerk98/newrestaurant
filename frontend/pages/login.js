@@ -73,10 +73,10 @@ export default function LoginRoute() {
           error={error}
         />
 
-        {/* Google Sign-In Button */}
+        {/* Google Sign-In */}
         <button
           onClick={handleGoogleSignIn} 
-          className="mt-4 px-4 py-2 bg-black hover:bg-gray-800 text-white font-semibold rounded"
+          className="mt-1 px-4 py-2 bg-black hover:bg-gray-800 text-white font-semibold rounded"
         >
           Login with Google
         </button>
