@@ -29,15 +29,11 @@ export default function LoginRoute() {
   const [loginMutation, { loading, error }] = useMutation(LOGIN_MUTATION);
 
   const handleLogin = async () => {
-    const { email, password } = formData;
-    const { data } = await loginMutation({
-      variables: { identifier: email, password },
-    });
-    if (data?.login.user) {
-      setUser(data.login.user);
-      Cookie.set("token", data.login.jwt);
-      router.push("/");
-    }
+    // Your email/password login logic
+  };
+
+  const handleGoogleSignIn = async () => {
+    // Google Sign-In Logic
     const auth = getAuth();
     signInWithPopup(auth, provider)
       .then((result) => {
@@ -48,7 +44,8 @@ export default function LoginRoute() {
         const user = result.user;
         // IdP data available using getAdditionalUserInfo(result)
         // ...
-      }).catch((error) => {
+      })
+      .catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -58,7 +55,6 @@ export default function LoginRoute() {
         const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
       });
-
   };
 
   if (loading) return <Loader />;
@@ -66,21 +62,21 @@ export default function LoginRoute() {
   return (
     <>
       <Form
-       title="Login"
-       buttonText="Login"
-       formData={formData}
-       setFormData={setFormData}
+        title="Login"
+        buttonText="Login"
+        formData={formData}
+        setFormData={setFormData}
         callback={handleLogin}
-       error={error}
+        error={error}
       />
-      {/* Google Sign-In Button*/}
-     <div>
-       <button
-         onClick={handleGoogleSignIn}
+      {/* Google Sign-In Button */}
+      <div>
+        <button
+          onClick={handleGoogleSignIn} 
           className="mt-4 w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-w px-4 rounded"
-       >
-         Sign in with Google
-        </button>    
+        >
+          Sign in with Google
+        </button>
       </div>
     </>
   );
