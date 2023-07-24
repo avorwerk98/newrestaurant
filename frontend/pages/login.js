@@ -33,8 +33,8 @@ export default function LoginRoute() {
     // Your email/password login logic
   };
 
-  const handleGoogleSignIn = async () => {
-    error.preventDefault();
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
     // Google Sign-In Logic
     const auth = getAuth();
     signInWithPopup(auth, provider)
