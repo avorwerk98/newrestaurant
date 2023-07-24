@@ -34,6 +34,7 @@ export default function LoginRoute() {
   };
 
   const handleGoogleSignIn = async () => {
+    error.preventDefault();
     // Google Sign-In Logic
     const auth = getAuth();
     signInWithPopup(auth, provider)
