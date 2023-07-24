@@ -73,9 +73,10 @@ export default function LoginRoute() {
       {/* Google Sign-In Button */}
       <div>
         <button
+          type="button"
           onClick={handleGoogleSignIn} 
-          className="mt-4 px-2 py-1 bg-red-600 hover:bg-red-700 text-white font-semibold rounded"
-        >
+          className="px-4 py-2 bg-black text-white font-semibold rounded"
+          >
           Sign in with Google
         </button>
       </div>
