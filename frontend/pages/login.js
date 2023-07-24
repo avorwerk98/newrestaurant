@@ -63,6 +63,7 @@ export default function LoginRoute() {
 
   return (
     <>
+     <div className="flex flex-col items-center"></div>
       <Form
         title="Login"
         buttonText="Login"
@@ -71,24 +72,14 @@ export default function LoginRoute() {
         callback={handleLogin}
         error={error}
       />
-       {/* Buttons Container */}
-       <div className="flex justify-center space-x-4 mt-4">
-        {/* Sign In Button */}
-        <button
-          onClick={handleLogin} 
-          className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded"
-        >
-          Sign In
-        </button>
 
         {/* Google Sign-In Button */}
         <button
           onClick={handleGoogleSignIn} 
-          className="px-4 py-2 bg-black hover:bg-gray-800 text-white font-semibold rounded"
+          className="mt-4 px-4 py-2 bg-black hover:bg-gray-800 text-white font-semibold rounded"
         >
           Login with Google
         </button>
-      </div>
     </>
   );
 }
