@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useAppContext } from "@/context/AppContext";
 import { gql, useMutation } from "@apollo/client";
 import Cookie from "js-cookie";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "../firebase.js";
 const provider = new GoogleAuthProvider();
 
 import Form from "@/components/Form";
@@ -73,7 +73,7 @@ export default function LoginRoute() {
       <div>
         <button
           onClick={handleGoogleSignIn} 
-          className="mt-4 w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-w px-4 rounded"
+          className="mt-4 px-2 py-1 bg-red-600 hover:bg-red-700 text-white font-semibold rounded"
         >
           Sign in with Google
         </button>
