@@ -63,15 +63,15 @@ export default function LoginRoute() {
 
   return (
     <>
-     <div className="flex flex-col items-center"></div>
-      <Form
-        title="Login"
-        buttonText="Login"
-        formData={formData}
-        setFormData={setFormData}
-        callback={handleLogin}
-        error={error}
-      />
+     <div className="flex flex-col items-center">
+        <Form
+          title="Login"
+          buttonText="Login"
+          formData={formData}
+          setFormData={setFormData}
+          callback={handleLogin}
+          error={error}
+        />
 
         {/* Google Sign-In Button */}
         <button
@@ -80,6 +80,7 @@ export default function LoginRoute() {
         >
           Login with Google
         </button>
+      </div>
     </>
   );
 }
