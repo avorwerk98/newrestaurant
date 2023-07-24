@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { useAppContext } from "@/context/AppContext";
 import { gql, useMutation } from "@apollo/client";
 import Cookie from "js-cookie";
-import firebase from "../firebase";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 const provider = new GoogleAuthProvider();
 
